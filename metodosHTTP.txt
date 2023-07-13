@@ -1,0 +1,24 @@
+POST (inserir)
+    {
+  "name": "Nova Empresa",
+  "website": "novaempresa.com",
+  "foundation": "2023"
+}
+
+PUT (atualizar)
+    {
+  "name": "Novo nome da empresa",
+  "website": "novaempresa.com",
+  "foundation": "2023-07-12"
+}
+
+PATCH (atualizar apenas um campo)
+    {
+  "name": "Novo nome da empresa"
+} 
+
+DELETE
+    ENVIA SOLICITACAO DE EXCLUSAO COM A ROTA E ID DO RECURSO.
+
+OPTION
+
