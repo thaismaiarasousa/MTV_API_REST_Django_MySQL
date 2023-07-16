@@ -33,7 +33,7 @@ class CompanyView(View):
             return JsonResponse(datos)
 
     def post(self, request):
-        jd = json.loads(request.body)
+        jd = json.loads(request.body.decode('utf-8'))
         company = Company.objects.create(name=jd['name'], website=jd['website'], foundation=jd['foundation'])
         datos = {'message': "Success", 'company': {'id': company.id, 'name': company.name, 'website': company.website, 'foundation': company.foundation}}
 
@@ -46,7 +46,7 @@ class CompanyView(View):
         return JsonResponse(datos)
 
     def put(self, request, id):
-        jd = json.loads(request.body)
+        jd = json.loads(request.body.decode('utf-8'))
         try:
             company = Company.objects.get(id=id)
             company.name = jd['name']
